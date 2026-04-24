@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support – AODexa</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070a10;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--accent:#00c8ff;--accent2:#7b5ea7;--text:#e8edf5;--muted:#7a8899;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 80% 10%,rgba(0,200,255,0.08) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(123,94,167,0.10) 0%,transparent 60%);pointer-events:none;}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(7,10,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);}
+  main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:72px 32px 120px;}
+  h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.03em;margin-bottom:12px;}
+  .page-sub{color:var(--muted);font-size:1.05rem;font-weight:300;margin-bottom:56px;}
+  .section{margin-bottom:52px;}
+  .section-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* Contact channels */
+  .channels{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:560px){.channels{grid-template-columns:1fr;}}
+  .channel-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color .25s,transform .25s;}
+  .channel-card:hover{border-color:rgba(0,200,255,0.25);transform:translateY(-3px);}
+  /* Channel icons SVG */
+  .ch-icon{width:44px;height:44px;border-radius:12px;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.18);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--accent);}
+  .ch-icon svg{width:22px;height:22px;}
+  .ch-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:6px;}
+  .ch-desc{color:var(--muted);font-size:.88rem;line-height:1.65;margin-bottom:18px;}
+  .ch-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:.9rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
+  .ch-link:hover{opacity:.75;}
+
+  /* Bug report steps */
+  .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.report-grid{grid-template-columns:1fr;}}
+  .report-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;}
+  .report-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:rgba(0,200,255,0.2);margin-bottom:8px;}
+  .report-item h4{font-family:'Syne',sans-serif;font-weight:600;font-size:.93rem;margin-bottom:6px;}
+  .report-item p{color:var(--muted);font-size:.87rem;line-height:1.65;}
+
+  /* Status */
+  .status-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);}
+  .status-row:last-child{border-bottom:none;}
+  .status-label{font-size:.93rem;}
+  .status-badge{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:99px;}
+  .status-ok{background:rgba(0,200,100,0.1);border:1px solid rgba(0,200,100,0.25);color:#00c864;}
+  .status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+
+  .info-box{background:rgba(123,94,167,0.08);border:1px solid rgba(123,94,167,0.2);border-radius:12px;padding:20px 24px;}
+  .info-box p{color:var(--muted);font-size:.93rem;line-height:1.75;margin:0;}
+  .info-box strong{color:var(--text);}
+  footer{text-align:center;padding:32px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);position:relative;z-index:1;}
+  footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#"><span class="logo-dot"></span>AODexa</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="support.html" class="active">Support</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Support</h1>
+  <p class="page-sub">We're here to help. Reach out anytime.</p>
+
+  <div class="section">
+    <div class="section-title">Contact Channels</div>
+    <div class="channels">
+      <div class="channel-card">
+        <div class="ch-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="ch-title">Email Support</div>
+        <div class="ch-desc">Send us a detailed message and we'll get back to you within 24 hours on business days.</div>
+        <a href="mailto:help.rahat24@gmail.com" class="ch-link">help.rahat24@gmail.com ↗</a>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="ch-title">Report a Bug</div>
+        <div class="ch-desc">Found something broken? Email us with details — include your Windows version and steps to reproduce — and we'll fix it.</div>
+        <a href="mailto:help.rahat24@gmail.com?subject=Bug Report – AODexa" class="ch-link">help.rahat24@gmail.com ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">How to Report a Bug</div>
+    <div class="report-grid">
+      <div class="report-item">
+        <div class="report-num">01</div>
+        <h4>Describe the Problem</h4>
+        <p>What happened? What did you expect to happen instead? Be as specific as possible.</p>
+      </div>
+      <div class="report-item">
+        <div class="report-num">02</div>
+        <h4>Steps to Reproduce</h4>
+        <p>Tell us exactly what you did before the problem occurred so we can reproduce it.</p>
+      </div>
+      <div class="report-item">
+        <div class="report-num">03</div>
+        <h4>Your System Info</h4>
+        <p>Include your Windows version (Win 10 / Win 11) and AODexa version from the About page.</p>
+      </div>
+      <div class="report-item">
+        <div class="report-num">04</div>
+        <h4>Attach a Screenshot</h4>
+        <p>If you see an error message or visual glitch, a screenshot speeds up diagnosis greatly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Service Status</div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:8px 24px;">
+      <div class="status-row">
+        <span class="status-label">Weather API (Open-Meteo)</span>
+        <span class="status-badge status-ok"><span class="status-dot"></span>Operational</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Prayer Times API (Aladhan)</span>
+        <span class="status-badge status-ok"><span class="status-dot"></span>Operational</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Location (Nominatim)</span>
+        <span class="status-badge status-ok"><span class="status-dot"></span>Operational</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Before You Contact Us</div>
+    <div class="info-box">
+      <p>Please check the <a href="help.html" style="color:var(--accent)">Help page</a> first — most common issues are covered there. For auto-idle problems, ensure <strong>AOD Master Switch</strong> and <strong>Auto-Idle Mode</strong> are both enabled in Settings. For startup issues, make sure the app is running in the <strong>system tray</strong>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Rahat Shahriar · AODexa · <a href="privacy.html">Privacy Policy</a> · <a href="about.html">About</a></footer>
+</body>
+</html>

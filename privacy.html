@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – AODexa</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070a10;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--accent:#00c8ff;--text:#e8edf5;--muted:#7a8899;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 80% 10%,rgba(0,200,255,0.08) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(123,94,167,0.10) 0%,transparent 60%);pointer-events:none;}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(7,10,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);}
+  main{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:72px 32px 120px;}
+  h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.03em;margin-bottom:10px;}
+  .effective{color:var(--muted);font-size:.9rem;margin-bottom:56px;}
+  .effective span{color:var(--accent);}
+
+  h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--text);margin:44px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  p{color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:14px;}
+  ul{list-style:none;padding:0;margin-bottom:14px;}
+  ul li{position:relative;padding-left:22px;color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:8px;}
+  ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.8rem;top:.15em;}
+
+  .highlight-box{background:rgba(0,200,255,0.05);border:1px solid rgba(0,200,255,0.2);border-radius:12px;padding:20px 24px;margin:20px 0;}
+  .highlight-box p{color:var(--text);margin:0;font-size:.93rem;}
+  .highlight-box strong{color:var(--accent);}
+
+  a{color:var(--accent);text-decoration:none;}
+  footer{text-align:center;padding:32px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#"><span class="logo-dot"></span>AODexa</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="privacy.html" class="active">Privacy</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="effective">Effective date: <span>April 1, 2026</span> &nbsp;·&nbsp; Version 1.0</p>
+
+  <div class="highlight-box">
+    <p><strong>Short version:</strong> AODexa does not collect, store, or share any personal data. All data stays on your device. We only access your location to fetch local weather and prayer times — this is never sent to our servers.</p>
+  </div>
+
+  <h2>1. Information We Collect</h2>
+  <p>AODexa is a local Windows application. We do not operate servers, databases, or user accounts. The following describes what data the app accesses and why:</p>
+  <ul>
+    <li><strong>Location (optional):</strong> Used solely to fetch local weather conditions and prayer times from third-party APIs (Open-Meteo, Aladhan). Your coordinates are sent directly from your device to these public APIs — AODexa never receives or stores them.</li>
+    <li><strong>Input activity (keyboard/mouse):</strong> The app monitors whether your device is idle to activate the AOD display. Keystrokes and mouse movement are detected locally only — no content is read, recorded, or transmitted.</li>
+    <li><strong>App settings:</strong> Preferences (widget choice, idle timeout, city name) are saved locally in a JSON file on your device only.</li>
+  </ul>
+
+  <h2>2. Information We Do NOT Collect</h2>
+  <ul>
+    <li>We do not collect your name, email, or any account information.</li>
+    <li>We do not record keystrokes or mouse content — only idle/active state.</li>
+    <li>We do not collect crash reports or analytics automatically.</li>
+    <li>We do not use advertising SDKs or tracking pixels.</li>
+    <li>We do not sell or share any data with third parties.</li>
+  </ul>
+
+  <h2>3. Third-Party Services</h2>
+  <p>AODexa queries the following public APIs directly from your device. These services have their own privacy policies:</p>
+  <ul>
+    <li><strong>Open-Meteo</strong> (weather data) — open-source, no API key required, no personal data stored.</li>
+    <li><strong>Aladhan API</strong> (prayer times) — public API, requests contain only coordinates and date.</li>
+    <li><strong>Nominatim / OpenStreetMap</strong> (geocoding) — used to convert city names to coordinates.</li>
+  </ul>
+
+  <h2>4. Data Storage</h2>
+  <p>All application data is stored locally on your Windows device in the app's settings file. You can delete this data at any time by uninstalling AODexa or clearing its app data through Windows Settings → Apps → AODexa → Advanced Options → Reset.</p>
+
+  <h2>5. Children's Privacy</h2>
+  <p>AODexa does not knowingly collect any information from children under 13. The app has no account system or data collection mechanism.</p>
+
+  <h2>6. Changes to This Policy</h2>
+  <p>If this privacy policy changes, the updated version will be published here with a new effective date. Continued use of AODexa after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>7. Contact</h2>
+  <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:help.rahat24@gmail.com">help.rahat24@gmail.com</a>.</p>
+</main>
+
+<footer>© 2026 Rahat Shahriar · AODexa · <a href="about.html">About</a> · <a href="support.html">Support</a></footer>
+</body>
+</html>
